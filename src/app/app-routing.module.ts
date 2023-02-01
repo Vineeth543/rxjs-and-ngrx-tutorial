@@ -13,6 +13,10 @@ import { TakeOperatorComponent } from './components/take-operator/take-operator.
 import { TakeLastComponent } from './components/take-last/take-last.component';
 import { TakeUntillComponent } from './components/take-untill/take-untill.component';
 import { TakeWhileComponent } from './components/take-while/take-while.component';
+import { SkipOperatorComponent } from './components/skip-operator/skip-operator.component';
+import { SkipLastComponent } from './components/skip-last/skip-last.component';
+import { SkipUntilComponent } from './components/skip-until/skip-until.component';
+import { SkipWhileComponent } from './components/skip-while/skip-while.component';
 
 const routes: Routes = [
   {
@@ -32,6 +36,9 @@ const routes: Routes = [
     component: OperatorsComponent,
     children: [
       { path: 'take', component: TakeOperatorComponent },
+      { path: 'skip', component: SkipOperatorComponent },
+      { path: 'skip-last', component: SkipLastComponent },
+      { path: 'skip-until', component: SkipUntilComponent },
       { path: 'take-last', component: TakeLastComponent },
       { path: 'take-while', component: TakeWhileComponent },
       { path: 'buffer', component: BufferOperatorComponent },
@@ -40,23 +47,28 @@ const routes: Routes = [
       { path: 'take-untill', component: TakeUntillComponent },
       { path: 'buffer-count', component: BufferCountComponent },
       { path: 'buffer-toggle', component: BufferToggleComponent },
+      { path: 'skip-while', component: SkipWhileComponent },
     ],
   },
 ];
 
 export const routingComponents = [
   TakeLastComponent,
+  SkipLastComponent,
   OperatorsComponent,
   TakeWhileComponent,
   BufferWhenComponent,
   TakeUntillComponent,
   BufferCountComponent,
   BufferToggleComponent,
+  SkipOperatorComponent,
   TakeOperatorComponent,
   BufferOperatorComponent,
   CustomObservableComponent,
   CreateObservablesComponent,
   UnsubscribeObservableComponent,
+  SkipUntilComponent,
+  SkipWhileComponent,
 ];
 
 @NgModule({

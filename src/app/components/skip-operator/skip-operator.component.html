@@ -1,0 +1,16 @@
+<h3>Skip Operator</h3>
+<form class="functions" #takeForm="ngForm">
+  <input
+    type="number"
+    name="count"
+    ngModel
+    placeholder="Enter count"
+    required
+  />
+  <button
+    [disabled]="takeForm.invalid"
+    (click)="skipValues(takeForm.value.count)"
+  >
+    Skip {{ takeForm.value.count || 0 }} values
+  </button>
+</form>

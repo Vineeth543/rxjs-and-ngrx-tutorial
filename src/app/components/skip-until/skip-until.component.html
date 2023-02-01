@@ -1,0 +1,20 @@
+<h3>Skip Until Operator</h3>
+<form class="functions" #Form="ngForm">
+  <input
+    type="number"
+    name="count"
+    ngModel
+    placeholder="Enter seconds to skip"
+    required
+  />
+  <button [disabled]="Form.invalid" (click)="skipValues(Form.value.count)">
+    Skip for {{ Form.value.count || 0 }} seconds
+  </button>
+  <button (click)="stopCounter()">Stop Counter</button>
+</form>
+
+<div class="functions">
+  <button (click)="startTimer()">Start Timer</button>
+  <button id="skip-until">Show values now</button>
+  <button (click)="stopTimer()">Stop Timer</button>
+</div>
