@@ -1,0 +1,9 @@
+<h3>Buffer Operator</h3>
+<div class="functions">
+  <button (click)="startInterval()">Start Interval</button>
+  <button id="showButton">Show Interval</button>
+  <button (click)="stopInterval()">Stop Interval</button>
+</div>
+<div class="data">
+  <p *ngFor="let data of intervalData">{{ data }}</p>
+</div>

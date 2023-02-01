@@ -1,0 +1,17 @@
+<h3>Take Operator</h3>
+<form class="functions" #takeForm="ngForm">
+  <input
+    type="number"
+    name="count"
+    ngModel
+    placeholder="Enter count"
+    required
+  />
+  <button
+    [disabled]="takeForm.invalid"
+    (click)="startInterval(takeForm.value.count)"
+  >
+    Start Interval
+  </button>
+  <button (click)="stopInterval()">Stop Interval</button>
+</form>
