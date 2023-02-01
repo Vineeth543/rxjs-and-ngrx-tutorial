@@ -17,6 +17,10 @@ import { SkipOperatorComponent } from './components/skip-operator/skip-operator.
 import { SkipLastComponent } from './components/skip-last/skip-last.component';
 import { SkipUntilComponent } from './components/skip-until/skip-until.component';
 import { SkipWhileComponent } from './components/skip-while/skip-while.component';
+import { DistinctOperatorsComponent } from './components/distinct-operator/distinct-operators/distinct-operators.component';
+import { DistinctComponent } from './components/distinct-operator/distinct/distinct.component';
+import { DistinctUntilChangedComponent } from './components/distinct-operator/distinct-until-changed/distinct-until-changed.component';
+import { DistinctUntilKeyChangedComponent } from './components/distinct-operator/distinct-until-key-changed/distinct-until-key-changed.component';
 
 const routes: Routes = [
   {
@@ -48,6 +52,21 @@ const routes: Routes = [
       { path: 'buffer-count', component: BufferCountComponent },
       { path: 'buffer-toggle', component: BufferToggleComponent },
       { path: 'skip-while', component: SkipWhileComponent },
+      {
+        path: 'distinct-operators',
+        component: DistinctOperatorsComponent,
+        children: [
+          { path: 'distinct', component: DistinctComponent },
+          {
+            path: 'distinct-until-changed',
+            component: DistinctUntilChangedComponent,
+          },
+          {
+            path: 'distinct-until-key-changed',
+            component: DistinctUntilKeyChangedComponent,
+          },
+        ],
+      },
     ],
   },
 ];
@@ -69,6 +88,10 @@ export const routingComponents = [
   UnsubscribeObservableComponent,
   SkipUntilComponent,
   SkipWhileComponent,
+  DistinctOperatorsComponent,
+  DistinctComponent,
+  DistinctUntilChangedComponent,
+  DistinctUntilKeyChangedComponent,
 ];
 
 @NgModule({
