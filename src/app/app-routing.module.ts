@@ -32,6 +32,9 @@ import { DebounceComponent } from './components/filtering-operators/debounce/deb
 import { ElementAtComponent } from './components/filtering-operators/element-at/element-at.component';
 import { IgnoreElementComponent } from './components/filtering-operators/ignore-element/ignore-element.component';
 import { SingleComponent } from './components/filtering-operators/single/single.component';
+import { MapOperatorComponent } from './components/transformation-operators/map-operator/map-operator.component';
+import { TransformationOperatorsComponent } from './components/transformation-operators/operators/operators.component';
+import { MapToComponent } from './components/transformation-operators/map-to/map-to.component';
 
 const routes: Routes = [
   {
@@ -94,6 +97,14 @@ const routes: Routes = [
           { path: 'single', component: SingleComponent },
         ],
       },
+      {
+        path: 'transformation-operators',
+        component: TransformationOperatorsComponent,
+        children: [
+          { path: 'map', component: MapOperatorComponent },
+          { path: 'map-to', component: MapToComponent },
+        ],
+      },
     ],
   },
 ];
@@ -130,6 +141,9 @@ export const routingComponents = [
   ElementAtComponent,
   IgnoreElementComponent,
   SingleComponent,
+  TransformationOperatorsComponent,
+  MapOperatorComponent,
+  MapToComponent,
 ];
 
 @NgModule({
