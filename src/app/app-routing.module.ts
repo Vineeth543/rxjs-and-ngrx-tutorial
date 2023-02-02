@@ -21,6 +21,17 @@ import { DistinctOperatorsComponent } from './components/distinct-operator/disti
 import { DistinctComponent } from './components/distinct-operator/distinct/distinct.component';
 import { DistinctUntilChangedComponent } from './components/distinct-operator/distinct-until-changed/distinct-until-changed.component';
 import { DistinctUntilKeyChangedComponent } from './components/distinct-operator/distinct-until-key-changed/distinct-until-key-changed.component';
+import { FilterOperatorsComponent } from './components/filtering-operators/filter-operators/filter-operators.component';
+import { FilterComponent } from './components/filtering-operators/filter/filter.component';
+import { SampleComponent } from './components/filtering-operators/sample/sample.component';
+import { AuditComponent } from './components/filtering-operators/audit/audit.component';
+import { ThrottleComponent } from './components/filtering-operators/throttle/throttle.component';
+import { FirstComponent } from './components/filtering-operators/first/first.component';
+import { LastComponent } from './components/filtering-operators/last/last.component';
+import { DebounceComponent } from './components/filtering-operators/debounce/debounce.component';
+import { ElementAtComponent } from './components/filtering-operators/element-at/element-at.component';
+import { IgnoreElementComponent } from './components/filtering-operators/ignore-element/ignore-element.component';
+import { SingleComponent } from './components/filtering-operators/single/single.component';
 
 const routes: Routes = [
   {
@@ -67,6 +78,22 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'filter-operators',
+        component: FilterOperatorsComponent,
+        children: [
+          { path: 'filter', component: FilterComponent },
+          { path: 'sample', component: SampleComponent },
+          { path: 'audit', component: AuditComponent },
+          { path: 'throttle', component: ThrottleComponent },
+          { path: 'first', component: FirstComponent },
+          { path: 'last', component: LastComponent },
+          { path: 'debounce', component: DebounceComponent },
+          { path: 'element-at', component: ElementAtComponent },
+          { path: 'ignore', component: IgnoreElementComponent },
+          { path: 'single', component: SingleComponent },
+        ],
+      },
     ],
   },
 ];
@@ -92,6 +119,17 @@ export const routingComponents = [
   DistinctComponent,
   DistinctUntilChangedComponent,
   DistinctUntilKeyChangedComponent,
+  FilterOperatorsComponent,
+  FilterComponent,
+  SampleComponent,
+  AuditComponent,
+  ThrottleComponent,
+  FirstComponent,
+  LastComponent,
+  DebounceComponent,
+  ElementAtComponent,
+  IgnoreElementComponent,
+  SingleComponent,
 ];
 
 @NgModule({

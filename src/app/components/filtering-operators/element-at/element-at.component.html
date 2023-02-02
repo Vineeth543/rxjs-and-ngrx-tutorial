@@ -1,0 +1,13 @@
+<h3>Element At Operator</h3>
+<form class="functions" #takeForm="ngForm">
+  <input
+    type="number"
+    name="count"
+    ngModel
+    placeholder="Enter index"
+    required
+  />
+  <button [disabled]="takeForm.invalid" (click)="getData(takeForm.value.count)">
+    Get ELement At {{ takeForm.value.count || 0 }} index
+  </button>
+</form>
