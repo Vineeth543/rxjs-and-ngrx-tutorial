@@ -35,6 +35,8 @@ import { SingleComponent } from './components/filtering-operators/single/single.
 import { MapOperatorComponent } from './components/transformation-operators/map-operator/map-operator.component';
 import { TransformationOperatorsComponent } from './components/transformation-operators/operators/operators.component';
 import { MapToComponent } from './components/transformation-operators/map-to/map-to.component';
+import { AjaxComponent } from './components/creation-operators/ajax/ajax.component';
+import { CreationOperatorsComponent } from './components/creation-operators/operators/operators.component';
 
 const routes: Routes = [
   {
@@ -105,6 +107,14 @@ const routes: Routes = [
           { path: 'map-to', component: MapToComponent },
         ],
       },
+      {
+        path: 'creation-operators',
+        component: CreationOperatorsComponent,
+        children: [
+          { path: 'ajax', component: AjaxComponent },
+          { path: 'map-to', component: MapToComponent },
+        ],
+      },
     ],
   },
 ];
@@ -144,6 +154,8 @@ export const routingComponents = [
   TransformationOperatorsComponent,
   MapOperatorComponent,
   MapToComponent,
+  CreationOperatorsComponent,
+  AjaxComponent,
 ];
 
 @NgModule({
