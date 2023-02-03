@@ -37,6 +37,14 @@ import { TransformationOperatorsComponent } from './components/transformation-op
 import { MapToComponent } from './components/transformation-operators/map-to/map-to.component';
 import { AjaxComponent } from './components/creation-operators/ajax/ajax.component';
 import { CreationOperatorsComponent } from './components/creation-operators/operators/operators.component';
+import { MappingOperatorsComponent } from './components/mapping-operators/operators/operators.component';
+import { MergeMapComponent } from './components/mapping-operators/merge-map/merge-map.component';
+import { MergeMapToComponent } from './components/mapping-operators/merge-map-to/merge-map-to.component';
+import { ConcatMapComponent } from './components/mapping-operators/concat-map/concat-map.component';
+import { ConcatMapToComponent } from './components/mapping-operators/concat-map-to/concat-map-to.component';
+import { ExhaustMapComponent } from './components/mapping-operators/exhaust-map/exhaust-map.component';
+import { SwitchMapComponent } from './components/mapping-operators/switch-map/switch-map.component';
+import { SwitchMapToComponent } from './components/mapping-operators/switch-map-to/switch-map-to.component';
 
 const routes: Routes = [
   {
@@ -115,6 +123,19 @@ const routes: Routes = [
           { path: 'map-to', component: MapToComponent },
         ],
       },
+      {
+        path: 'mapping-operators',
+        component: MappingOperatorsComponent,
+        children: [
+          { path: 'merge-map', component: MergeMapComponent },
+          { path: 'merge-map-to', component: MergeMapToComponent },
+          { path: 'concat-map', component: ConcatMapComponent },
+          { path: 'concat-map-to', component: ConcatMapToComponent },
+          { path: 'exhaust-map', component: ExhaustMapComponent },
+          { path: 'switch-map', component: SwitchMapComponent },
+          { path: 'switch-map-to', component: SwitchMapToComponent },
+        ],
+      },
     ],
   },
 ];
@@ -156,6 +177,14 @@ export const routingComponents = [
   MapToComponent,
   CreationOperatorsComponent,
   AjaxComponent,
+  MappingOperatorsComponent,
+  MergeMapComponent,
+  MergeMapToComponent,
+  ConcatMapComponent,
+  ConcatMapToComponent,
+  ExhaustMapComponent,
+  SwitchMapComponent,
+  SwitchMapToComponent,
 ];
 
 @NgModule({
