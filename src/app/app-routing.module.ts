@@ -1,81 +1,117 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { ObservablesComponent } from './components/observables/observables.component';
+import { CustomObservableComponent } from './components/observables/custom-observable/custom-observable.component';
+import { CreateObservablesComponent } from './components/observables/create-observables/create-observables.component';
+import { UnsubscribeObservableComponent } from './components/observables/unsubscribe-observable/unsubscribe-observable.component';
+
 import { OperatorsComponent } from './components/operators/operators.component';
-import { BufferTimeComponent } from './components/buffer-time/buffer-time.component';
-import { BufferCountComponent } from './components/buffer-count/buffer-count.component';
-import { BufferToggleComponent } from './components/buffer-toggle/buffer-toggle.component';
-import { BufferOperatorComponent } from './components/buffer-operator/buffer-operator.component';
-import { CustomObservableComponent } from './components/custom-observable/custom-observable.component';
-import { CreateObservablesComponent } from './components/create-observables/create-observables.component';
-import { UnsubscribeObservableComponent } from './components/unsubscribe-observable/unsubscribe-observable.component';
-import { BufferWhenComponent } from './components/buffer-when/buffer-when.component';
-import { TakeOperatorComponent } from './components/take-operator/take-operator.component';
-import { TakeLastComponent } from './components/take-last/take-last.component';
-import { TakeUntillComponent } from './components/take-untill/take-untill.component';
-import { TakeWhileComponent } from './components/take-while/take-while.component';
-import { SkipOperatorComponent } from './components/skip-operator/skip-operator.component';
-import { SkipLastComponent } from './components/skip-last/skip-last.component';
-import { SkipUntilComponent } from './components/skip-until/skip-until.component';
-import { SkipWhileComponent } from './components/skip-while/skip-while.component';
-import { DistinctOperatorsComponent } from './components/distinct-operator/distinct-operators/distinct-operators.component';
+import { BufferWhenComponent } from './components/buffer-operators/buffer-when/buffer-when.component';
+import { BufferTimeComponent } from './components/buffer-operators/buffer-time/buffer-time.component';
+import { BufferOperatorsComponent } from './components/buffer-operators/operators/operators.component';
+import { BufferCountComponent } from './components/buffer-operators/buffer-count/buffer-count.component';
+import { BufferToggleComponent } from './components/buffer-operators/buffer-toggle/buffer-toggle.component';
+import { BufferOperatorComponent } from './components/buffer-operators/buffer-operator/buffer-operator.component';
+
+import { TakeLastComponent } from './components/take-operators/take-last/take-last.component';
+import { TakeWhileComponent } from './components/take-operators/take-while/take-while.component';
+import { TakeOperatorsComponent } from './components/take-operators/operators/operators.component';
+import { TakeUntillComponent } from './components/take-operators/take-untill/take-untill.component';
+import { TakeOperatorComponent } from './components/take-operators/take-operator/take-operator.component';
+
+import { SkipLastComponent } from './components/skip-operators/skip-last/skip-last.component';
+import { SkipUntilComponent } from './components/skip-operators/skip-until/skip-until.component';
+import { SkipWhileComponent } from './components/skip-operators/skip-while/skip-while.component';
+import { SkipOperatorsComponent } from './components/skip-operators/operators/operators.component';
+import { SkipOperatorComponent } from './components/skip-operators/skip-operator/skip-operator.component';
+
 import { DistinctComponent } from './components/distinct-operator/distinct/distinct.component';
+import { DistinctOperatorsComponent } from './components/distinct-operator/distinct-operators/distinct-operators.component';
 import { DistinctUntilChangedComponent } from './components/distinct-operator/distinct-until-changed/distinct-until-changed.component';
 import { DistinctUntilKeyChangedComponent } from './components/distinct-operator/distinct-until-key-changed/distinct-until-key-changed.component';
-import { FilterOperatorsComponent } from './components/filtering-operators/filter-operators/filter-operators.component';
+
+import { LastComponent } from './components/filtering-operators/last/last.component';
+import { AuditComponent } from './components/filtering-operators/audit/audit.component';
+import { FirstComponent } from './components/filtering-operators/first/first.component';
 import { FilterComponent } from './components/filtering-operators/filter/filter.component';
 import { SampleComponent } from './components/filtering-operators/sample/sample.component';
-import { AuditComponent } from './components/filtering-operators/audit/audit.component';
+import { SingleComponent } from './components/filtering-operators/single/single.component';
 import { ThrottleComponent } from './components/filtering-operators/throttle/throttle.component';
-import { FirstComponent } from './components/filtering-operators/first/first.component';
-import { LastComponent } from './components/filtering-operators/last/last.component';
 import { DebounceComponent } from './components/filtering-operators/debounce/debounce.component';
 import { ElementAtComponent } from './components/filtering-operators/element-at/element-at.component';
 import { IgnoreElementComponent } from './components/filtering-operators/ignore-element/ignore-element.component';
-import { SingleComponent } from './components/filtering-operators/single/single.component';
+import { FilterOperatorsComponent } from './components/filtering-operators/filter-operators/filter-operators.component';
+
+import { MapToComponent } from './components/transformation-operators/map-to/map-to.component';
 import { MapOperatorComponent } from './components/transformation-operators/map-operator/map-operator.component';
 import { TransformationOperatorsComponent } from './components/transformation-operators/operators/operators.component';
-import { MapToComponent } from './components/transformation-operators/map-to/map-to.component';
+
 import { AjaxComponent } from './components/creation-operators/ajax/ajax.component';
 import { CreationOperatorsComponent } from './components/creation-operators/operators/operators.component';
-import { MappingOperatorsComponent } from './components/mapping-operators/operators/operators.component';
+
 import { MergeMapComponent } from './components/mapping-operators/merge-map/merge-map.component';
-import { MergeMapToComponent } from './components/mapping-operators/merge-map-to/merge-map-to.component';
 import { ConcatMapComponent } from './components/mapping-operators/concat-map/concat-map.component';
-import { ConcatMapToComponent } from './components/mapping-operators/concat-map-to/concat-map-to.component';
-import { ExhaustMapComponent } from './components/mapping-operators/exhaust-map/exhaust-map.component';
 import { SwitchMapComponent } from './components/mapping-operators/switch-map/switch-map.component';
+import { ExhaustMapComponent } from './components/mapping-operators/exhaust-map/exhaust-map.component';
+import { MappingOperatorsComponent } from './components/mapping-operators/operators/operators.component';
+import { MergeMapToComponent } from './components/mapping-operators/merge-map-to/merge-map-to.component';
+import { ConcatMapToComponent } from './components/mapping-operators/concat-map-to/concat-map-to.component';
 import { SwitchMapToComponent } from './components/mapping-operators/switch-map-to/switch-map-to.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: CreateObservablesComponent,
+    redirectTo: 'observables',
+    pathMatch: 'full',
   },
   {
-    path: 'custom-observables',
-    component: CustomObservableComponent,
-  },
-  {
-    path: 'unsubscribe-observables',
-    component: UnsubscribeObservableComponent,
+    path: 'observables',
+    component: ObservablesComponent,
+    children: [
+      { path: 'create-observables', component: CreateObservablesComponent },
+      { path: 'custom-observables', component: CustomObservableComponent },
+      {
+        path: 'unsubscribe-observables',
+        component: UnsubscribeObservableComponent,
+      },
+    ],
   },
   {
     path: 'operators',
     component: OperatorsComponent,
     children: [
-      { path: 'take', component: TakeOperatorComponent },
-      { path: 'skip', component: SkipOperatorComponent },
-      { path: 'skip-last', component: SkipLastComponent },
-      { path: 'skip-until', component: SkipUntilComponent },
-      { path: 'take-last', component: TakeLastComponent },
-      { path: 'take-while', component: TakeWhileComponent },
-      { path: 'buffer', component: BufferOperatorComponent },
-      { path: 'buffer-time', component: BufferTimeComponent },
-      { path: 'buffer-when', component: BufferWhenComponent },
-      { path: 'take-untill', component: TakeUntillComponent },
-      { path: 'buffer-count', component: BufferCountComponent },
-      { path: 'buffer-toggle', component: BufferToggleComponent },
-      { path: 'skip-while', component: SkipWhileComponent },
+      {
+        path: 'buffer-operators',
+        component: BufferOperatorsComponent,
+        children: [
+          { path: 'buffer', component: BufferOperatorComponent },
+          { path: 'buffer-time', component: BufferTimeComponent },
+          { path: 'buffer-when', component: BufferWhenComponent },
+          { path: 'buffer-count', component: BufferCountComponent },
+          { path: 'buffer-toggle', component: BufferToggleComponent },
+        ],
+      },
+      {
+        path: 'take-operators',
+        component: TakeOperatorsComponent,
+        children: [
+          { path: 'take', component: TakeOperatorComponent },
+          { path: 'take-last', component: TakeLastComponent },
+          { path: 'take-while', component: TakeWhileComponent },
+          { path: 'take-until', component: TakeUntillComponent },
+        ],
+      },
+      {
+        path: 'skip-operators',
+        component: SkipOperatorsComponent,
+        children: [
+          { path: 'skip', component: SkipOperatorComponent },
+          { path: 'skip-last', component: SkipLastComponent },
+          { path: 'skip-until', component: SkipUntilComponent },
+          { path: 'skip-while', component: SkipWhileComponent },
+        ],
+      },
       {
         path: 'distinct-operators',
         component: DistinctOperatorsComponent,
@@ -141,24 +177,28 @@ const routes: Routes = [
 ];
 
 export const routingComponents = [
-  TakeLastComponent,
-  SkipLastComponent,
-  OperatorsComponent,
-  TakeWhileComponent,
-  BufferWhenComponent,
-  TakeUntillComponent,
-  BufferCountComponent,
-  BufferToggleComponent,
-  SkipOperatorComponent,
-  TakeOperatorComponent,
-  BufferOperatorComponent,
+  ObservablesComponent,
   CustomObservableComponent,
   CreateObservablesComponent,
   UnsubscribeObservableComponent,
+  OperatorsComponent,
+  BufferWhenComponent,
+  BufferCountComponent,
+  BufferToggleComponent,
+  BufferOperatorComponent,
+  BufferOperatorsComponent,
+  TakeLastComponent,
+  TakeWhileComponent,
+  TakeUntillComponent,
+  TakeOperatorComponent,
+  TakeOperatorsComponent,
+  SkipLastComponent,
   SkipUntilComponent,
   SkipWhileComponent,
-  DistinctOperatorsComponent,
+  SkipOperatorComponent,
+  SkipOperatorsComponent,
   DistinctComponent,
+  DistinctOperatorsComponent,
   DistinctUntilChangedComponent,
   DistinctUntilKeyChangedComponent,
   FilterOperatorsComponent,
