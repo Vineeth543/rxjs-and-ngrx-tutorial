@@ -59,6 +59,8 @@ import { MergeMapToComponent } from './components/mapping-operators/merge-map-to
 import { ConcatMapToComponent } from './components/mapping-operators/concat-map-to/concat-map-to.component';
 import { SwitchMapToComponent } from './components/mapping-operators/switch-map-to/switch-map-to.component';
 
+import { SubjectsComponent } from './components/subjects/subjects.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -174,6 +176,10 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'subject',
+    component: SubjectsComponent,
+  },
 ];
 
 export const routingComponents = [
@@ -225,6 +231,7 @@ export const routingComponents = [
   ExhaustMapComponent,
   SwitchMapComponent,
   SwitchMapToComponent,
+  SubjectsComponent,
 ];
 
 @NgModule({
