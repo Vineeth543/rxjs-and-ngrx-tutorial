@@ -1,5 +1,13 @@
-<h3>Switch Map To Operator</h3>
+<h3>Subjects</h3>
 <div class="functions">
   <button (click)="getDatafromObservable()">Get Data from Observable</button>
   <button (click)="getDatafromSubject()">Get Data from Subject</button>
+  <button routerLink="hot-and-cold-observables">
+    Hot and Cold Observables
+  </button>
+  <button routerLink="multicast-and-connectable">
+    Multicast & Connectable
+  </button>
+  <button routerLink="publish-refcount-share">Publish, RefCount & Share</button>
 </div>
+<router-outlet></router-outlet>

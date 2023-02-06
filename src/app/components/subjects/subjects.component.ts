@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Observable, Observer, Subject } from 'rxjs';
+import { UnsubscriberService } from 'src/app/services/unsubscriber.service';
 
 @Component({
   selector: 'app-subjects',
   templateUrl: './subjects.component.html',
   styleUrls: ['./subjects.component.less'],
+  providers: [UnsubscriberService],
 })
 export class SubjectsComponent {
   subject: Subject<number> = new Subject<number>();
@@ -28,10 +30,16 @@ export class SubjectsComponent {
     complete: () => console.info('Observer 2 completed.'),
   };
 
+  constructor(private readonly _unsubscriber: UnsubscriberService) {}
+
   getDatafromObservable() {
     console.log('\nData from normal Observable...');
-    this.observable$.subscribe(this.observer1);
-    this.observable$.subscribe(this.observer2);
+    this.observable$
+      .pipe(this._unsubscriber.takeUntilDestroy)
+      .subscribe(this.observer1);
+    this.observable$
+      .pipe(this._unsubscriber.takeUntilDestroy)
+      .subscribe(this.observer2);
   }
 
   getDatafromSubject() {
@@ -39,5 +47,9 @@ export class SubjectsComponent {
     this.subject.subscribe(this.observer1);
     this.subject.subscribe(this.observer2);
     this.observable$.subscribe(this.subject);
+    // this.subject.next(101);
+    // this.subject.next(102);
+    // this.subject.next(103);
+    // this.subject.complete();
   }
 }

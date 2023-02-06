@@ -60,6 +60,9 @@ import { ConcatMapToComponent } from './components/mapping-operators/concat-map-
 import { SwitchMapToComponent } from './components/mapping-operators/switch-map-to/switch-map-to.component';
 
 import { SubjectsComponent } from './components/subjects/subjects.component';
+import { HotAndColdObservablesComponent } from './components/subjects/hot-and-cold-observables/hot-and-cold-observables.component';
+import { MulticastAndConnectableComponent } from './components/subjects/multicast-and-connectable/multicast-and-connectable.component';
+import { PublishRefcountShareComponent } from './components/subjects/publish-refcount-share/publish-refcount-share.component';
 
 const routes: Routes = [
   {
@@ -179,6 +182,20 @@ const routes: Routes = [
   {
     path: 'subject',
     component: SubjectsComponent,
+    children: [
+      {
+        path: 'hot-and-cold-observables',
+        component: HotAndColdObservablesComponent,
+      },
+      {
+        path: 'multicast-and-connectable',
+        component: MulticastAndConnectableComponent,
+      },
+      {
+        path: 'publish-refcount-share',
+        component: PublishRefcountShareComponent,
+      },
+    ],
   },
 ];
 
@@ -232,6 +249,9 @@ export const routingComponents = [
   SwitchMapComponent,
   SwitchMapToComponent,
   SubjectsComponent,
+  HotAndColdObservablesComponent,
+  MulticastAndConnectableComponent,
+  PublishRefcountShareComponent,
 ];
 
 @NgModule({
