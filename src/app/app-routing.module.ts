@@ -63,6 +63,9 @@ import { SubjectsComponent } from './components/subjects/subjects.component';
 import { HotAndColdObservablesComponent } from './components/subjects/hot-and-cold-observables/hot-and-cold-observables.component';
 import { MulticastAndConnectableComponent } from './components/subjects/multicast-and-connectable/multicast-and-connectable.component';
 import { PublishRefcountShareComponent } from './components/subjects/publish-refcount-share/publish-refcount-share.component';
+import { BehaviorSubjectComponent } from './components/subjects/behavior-subject/behavior-subject.component';
+import { ReplaySubjectComponent } from './components/subjects/replay-subject/replay-subject.component';
+import { AsyncSubjectComponent } from './components/subjects/async-subject/async-subject.component';
 
 const routes: Routes = [
   {
@@ -195,6 +198,18 @@ const routes: Routes = [
         path: 'publish-refcount-share',
         component: PublishRefcountShareComponent,
       },
+      {
+        path: 'behavior-subject',
+        component: BehaviorSubjectComponent,
+      },
+      {
+        path: 'replay-subject',
+        component: ReplaySubjectComponent,
+      },
+      {
+        path: 'async-subject',
+        component: AsyncSubjectComponent,
+      },
     ],
   },
 ];
@@ -252,6 +267,9 @@ export const routingComponents = [
   HotAndColdObservablesComponent,
   MulticastAndConnectableComponent,
   PublishRefcountShareComponent,
+  BehaviorSubjectComponent,
+  ReplaySubjectComponent,
+  AsyncSubjectComponent,
 ];
 
 @NgModule({
