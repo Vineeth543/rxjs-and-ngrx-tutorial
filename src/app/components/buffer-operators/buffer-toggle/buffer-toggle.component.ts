@@ -15,11 +15,11 @@ export class BufferToggleComponent {
     this.subscription.push(
       interval(1000)
         .pipe(
-          tap((data) => console.log(data)),
+          tap((data) => console.log('Tap: ', data)),
           bufferToggle(opening, closing),
           take(3)
         )
-        .subscribe((data) => console.log(data))
+        .subscribe((data) => console.log('Buffer: ', data))
     );
   }
 

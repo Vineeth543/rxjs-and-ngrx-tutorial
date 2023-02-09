@@ -25,7 +25,7 @@ export class BufferOperatorComponent implements OnInit {
   startInterval() {
     this.subscription = interval(1000)
       .pipe(
-        tap((data) => console.log(data)),
+        tap((data) => console.log('Tap: ', data)),
         buffer(this.showData$)
       )
       .subscribe((data: number[]) => {

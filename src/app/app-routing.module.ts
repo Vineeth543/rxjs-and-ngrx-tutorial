@@ -66,6 +66,15 @@ import { PublishRefcountShareComponent } from './components/subjects/publish-ref
 import { BehaviorSubjectComponent } from './components/subjects/behavior-subject/behavior-subject.component';
 import { ReplaySubjectComponent } from './components/subjects/replay-subject/replay-subject.component';
 import { AsyncSubjectComponent } from './components/subjects/async-subject/async-subject.component';
+import { VoidSubjectComponent } from './components/subjects/void-subject/void-subject.component';
+import { SubjectOperatorsComponent } from './components/subjects/operators/operators.component';
+import { PublishBehaviorComponent } from './components/subjects/operators/publish-behavior/publish-behavior.component';
+import { PublishLastComponent } from './components/subjects/operators/publish-last/publish-last.component';
+import { PublishReplayComponent } from './components/subjects/operators/publish-replay/publish-replay.component';
+import { ErrorHandlingOperatorsComponent } from './components/error-handling-operators/error-handling-operators.component';
+import { CatchErrorComponent } from './components/error-handling-operators/catch-error/catch-error.component';
+import { RetryComponent } from './components/error-handling-operators/retry/retry.component';
+import { RetryWhenComponent } from './components/error-handling-operators/retry-when/retry-when.component';
 
 const routes: Routes = [
   {
@@ -180,6 +189,15 @@ const routes: Routes = [
           { path: 'switch-map-to', component: SwitchMapToComponent },
         ],
       },
+      {
+        path: 'error-handling-operators',
+        component: ErrorHandlingOperatorsComponent,
+        children: [
+          { path: 'catch-error', component: CatchErrorComponent },
+          { path: 'retry', component: RetryComponent },
+          { path: 'retry-when', component: RetryWhenComponent },
+        ],
+      },
     ],
   },
   {
@@ -209,6 +227,28 @@ const routes: Routes = [
       {
         path: 'async-subject',
         component: AsyncSubjectComponent,
+      },
+      {
+        path: 'void-subject',
+        component: VoidSubjectComponent,
+      },
+      {
+        path: 'subject-operators',
+        component: SubjectOperatorsComponent,
+        children: [
+          {
+            path: 'publish-behavior',
+            component: PublishBehaviorComponent,
+          },
+          {
+            path: 'publish-last',
+            component: PublishLastComponent,
+          },
+          {
+            path: 'publish-replay',
+            component: PublishReplayComponent,
+          },
+        ],
       },
     ],
   },
@@ -270,6 +310,15 @@ export const routingComponents = [
   BehaviorSubjectComponent,
   ReplaySubjectComponent,
   AsyncSubjectComponent,
+  VoidSubjectComponent,
+  SubjectOperatorsComponent,
+  PublishBehaviorComponent,
+  PublishLastComponent,
+  PublishReplayComponent,
+  ErrorHandlingOperatorsComponent,
+  CatchErrorComponent,
+  RetryComponent,
+  RetryWhenComponent,
 ];
 
 @NgModule({

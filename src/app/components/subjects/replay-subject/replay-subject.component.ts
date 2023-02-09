@@ -10,7 +10,8 @@ export class ReplaySubjectComponent {
   getReplaySubjectData(): void {
     console.log('\nReplay Subject Flow');
 
-    let subject$ = new ReplaySubject();
+    let subject$ = new ReplaySubject(10, 3010);
+
     subject$.next(1);
 
     subject$.subscribe((data) => console.log('Observer 1: ', data));

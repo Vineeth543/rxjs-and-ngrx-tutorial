@@ -15,7 +15,7 @@ export class BufferWhenComponent {
       .pipe(
         tap((t) => {
           x = t;
-          console.log(x, t);
+          console.log('Tap:', x, t);
         }),
         bufferWhen(() => {
           if (x >= 4) return interval(2000);

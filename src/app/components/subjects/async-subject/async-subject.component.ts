@@ -8,23 +8,23 @@ import { AsyncSubject } from 'rxjs';
 })
 export class AsyncSubjectComponent {
   getAsyncSubjectData() {
-    console.log('\nReplay Subject Flow');
+    console.log('\nAsync Subject Flow');
 
     let subject$ = new AsyncSubject();
 
     subject$.next(1);
 
-    subject$.subscribe((data) => console.log('Observer 1: ', data));
+    subject$.subscribe((data) => console.log('Observer 1:', data));
 
     subject$.next(2);
     subject$.next(3);
     subject$.next(4);
 
-    subject$.complete();
-
+    
     setTimeout(() => {
+      subject$.subscribe((data) => console.log('Observer 2:', data));
       subject$.next(5);
-      subject$.subscribe((data) => console.log('Observer 2: ', data));
+      subject$.complete();
     }, 3000);
   }
 }
