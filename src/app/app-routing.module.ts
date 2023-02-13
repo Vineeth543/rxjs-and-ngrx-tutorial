@@ -67,14 +67,25 @@ import { BehaviorSubjectComponent } from './components/subjects/behavior-subject
 import { ReplaySubjectComponent } from './components/subjects/replay-subject/replay-subject.component';
 import { AsyncSubjectComponent } from './components/subjects/async-subject/async-subject.component';
 import { VoidSubjectComponent } from './components/subjects/void-subject/void-subject.component';
+
 import { SubjectOperatorsComponent } from './components/subjects/operators/operators.component';
 import { PublishBehaviorComponent } from './components/subjects/operators/publish-behavior/publish-behavior.component';
 import { PublishLastComponent } from './components/subjects/operators/publish-last/publish-last.component';
 import { PublishReplayComponent } from './components/subjects/operators/publish-replay/publish-replay.component';
+
 import { ErrorHandlingOperatorsComponent } from './components/error-handling-operators/error-handling-operators.component';
 import { CatchErrorComponent } from './components/error-handling-operators/catch-error/catch-error.component';
 import { RetryComponent } from './components/error-handling-operators/retry/retry.component';
 import { RetryWhenComponent } from './components/error-handling-operators/retry-when/retry-when.component';
+
+import { ObservableCreationOperatorsComponent } from './components/observable-creation-operators/observable-creation-operators.component';
+import { CombineLatestComponent } from './components/observable-creation-operators/combine-latest/combine-latest.component';
+import { ConcatComponent } from './components/observable-creation-operators/concat/concat.component';
+import { ForkJoinComponent } from './components/observable-creation-operators/fork-join/fork-join.component';
+import { MergeComponent } from './components/observable-creation-operators/merge/merge.component';
+import { PartitionComponent } from './components/observable-creation-operators/partition/partition.component';
+import { RaceComponent } from './components/observable-creation-operators/race/race.component';
+import { ZipComponent } from './components/observable-creation-operators/zip/zip.component';
 
 const routes: Routes = [
   {
@@ -198,6 +209,19 @@ const routes: Routes = [
           { path: 'retry-when', component: RetryWhenComponent },
         ],
       },
+      {
+        path: 'observable-creation-operators',
+        component: ObservableCreationOperatorsComponent,
+        children: [
+          { path: 'combine-latest', component: CombineLatestComponent },
+          { path: 'concat', component: ConcatComponent },
+          { path: 'fork-join', component: ForkJoinComponent },
+          { path: 'merge', component: MergeComponent },
+          { path: 'partition', component: PartitionComponent },
+          { path: 'race', component: RaceComponent },
+          { path: 'zip', component: ZipComponent },
+        ],
+      },
     ],
   },
   {
@@ -319,6 +343,14 @@ export const routingComponents = [
   CatchErrorComponent,
   RetryComponent,
   RetryWhenComponent,
+  ObservableCreationOperatorsComponent,
+  CombineLatestComponent,
+  ConcatComponent,
+  ForkJoinComponent,
+  MergeComponent,
+  PartitionComponent,
+  RaceComponent,
+  ZipComponent,
 ];
 
 @NgModule({
