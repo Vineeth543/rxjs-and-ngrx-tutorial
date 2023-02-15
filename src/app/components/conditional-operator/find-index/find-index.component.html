@@ -1,0 +1,15 @@
+<h3>findIndex Operator</h3>
+<h4>{{ data }}</h4>
+<form class="functions" #Form="ngForm">
+  <input
+    type="number"
+    name="element"
+    ngModel
+    placeholder="Enter element to find index"
+    required
+  />
+  <button [disabled]="Form.invalid" (click)="findTheIndex(Form.value.element)">
+    Find {{ Form.value.element || 0 }}
+  </button>
+</form>
+<h4>{{ result }}</h4>

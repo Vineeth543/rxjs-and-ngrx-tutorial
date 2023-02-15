@@ -86,6 +86,7 @@ import { MergeComponent } from './components/observable-creation-operators/merge
 import { PartitionComponent } from './components/observable-creation-operators/partition/partition.component';
 import { RaceComponent } from './components/observable-creation-operators/race/race.component';
 import { ZipComponent } from './components/observable-creation-operators/zip/zip.component';
+
 import { SchedulersComponent } from './components/schedulers/schedulers.component';
 import { DeferComponent } from './components/observable-creation-operators/defer/defer.component';
 import { RangeComponent } from './components/observable-creation-operators/range/range.component';
@@ -95,6 +96,13 @@ import { CountComponent } from './components/observable-creation-operators/count
 import { MaxComponent } from './components/observable-creation-operators/max/max.component';
 import { MinComponent } from './components/observable-creation-operators/min/min.component';
 import { ReduceComponent } from './components/observable-creation-operators/reduce/reduce.component';
+
+import { ConditionalOperatorComponent } from './components/conditional-operator/conditional-operator.component';
+import { IsEmptyComponent } from './components/conditional-operator/is-empty/is-empty.component';
+import { FindIndexComponent } from './components/conditional-operator/find-index/find-index.component';
+import { FindComponent } from './components/conditional-operator/find/find.component';
+import { EveryComponent } from './components/conditional-operator/every/every.component';
+import { DefaultIfEmptyComponent } from './components/conditional-operator/default-if-empty/default-if-empty.component';
 
 const routes: Routes = [
   {
@@ -239,6 +247,17 @@ const routes: Routes = [
           { path: 'reduce', component: ReduceComponent },
         ],
       },
+      {
+        path: 'condtitional-operators',
+        component: ConditionalOperatorComponent,
+        children: [
+          { path: 'is-empty', component: IsEmptyComponent },
+          { path: 'find-index', component: FindIndexComponent },
+          { path: 'find', component: FindComponent },
+          { path: 'every', component: EveryComponent },
+          { path: 'default', component: DefaultIfEmptyComponent },
+        ],
+      },
     ],
   },
   {
@@ -381,6 +400,12 @@ export const routingComponents = [
   MaxComponent,
   MinComponent,
   ReduceComponent,
+  ConditionalOperatorComponent,
+  IsEmptyComponent,
+  FindIndexComponent,
+  FindComponent,
+  EveryComponent,
+  DefaultIfEmptyComponent,
 ];
 
 @NgModule({
