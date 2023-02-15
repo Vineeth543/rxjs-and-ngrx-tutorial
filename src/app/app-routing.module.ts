@@ -86,6 +86,15 @@ import { MergeComponent } from './components/observable-creation-operators/merge
 import { PartitionComponent } from './components/observable-creation-operators/partition/partition.component';
 import { RaceComponent } from './components/observable-creation-operators/race/race.component';
 import { ZipComponent } from './components/observable-creation-operators/zip/zip.component';
+import { SchedulersComponent } from './components/schedulers/schedulers.component';
+import { DeferComponent } from './components/observable-creation-operators/defer/defer.component';
+import { RangeComponent } from './components/observable-creation-operators/range/range.component';
+import { GenerateComponent } from './components/observable-creation-operators/generate/generate.component';
+import { TimerComponent } from './components/observable-creation-operators/timer/timer.component';
+import { CountComponent } from './components/observable-creation-operators/count/count.component';
+import { MaxComponent } from './components/observable-creation-operators/max/max.component';
+import { MinComponent } from './components/observable-creation-operators/min/min.component';
+import { ReduceComponent } from './components/observable-creation-operators/reduce/reduce.component';
 
 const routes: Routes = [
   {
@@ -220,6 +229,14 @@ const routes: Routes = [
           { path: 'partition', component: PartitionComponent },
           { path: 'race', component: RaceComponent },
           { path: 'zip', component: ZipComponent },
+          { path: 'defer', component: DeferComponent },
+          { path: 'range', component: RangeComponent },
+          { path: 'generate', component: GenerateComponent },
+          { path: 'timer', component: TimerComponent },
+          { path: 'count', component: CountComponent },
+          { path: 'max', component: MaxComponent },
+          { path: 'min', component: MinComponent },
+          { path: 'reduce', component: ReduceComponent },
         ],
       },
     ],
@@ -275,6 +292,10 @@ const routes: Routes = [
         ],
       },
     ],
+  },
+  {
+    path: 'scheduler',
+    component: SchedulersComponent,
   },
 ];
 
@@ -351,6 +372,15 @@ export const routingComponents = [
   PartitionComponent,
   RaceComponent,
   ZipComponent,
+  SchedulersComponent,
+  DeferComponent,
+  RangeComponent,
+  GenerateComponent,
+  TimerComponent,
+  CountComponent,
+  MaxComponent,
+  MinComponent,
+  ReduceComponent,
 ];
 
 @NgModule({
