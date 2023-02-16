@@ -104,6 +104,14 @@ import { FindComponent } from './components/conditional-operator/find/find.compo
 import { EveryComponent } from './components/conditional-operator/every/every.component';
 import { DefaultIfEmptyComponent } from './components/conditional-operator/default-if-empty/default-if-empty.component';
 
+import { UtilityOperatorsComponent } from './components/utility-operators/utility-operators.component';
+import { ToArrayComponent } from './components/utility-operators/to-array/to-array.component';
+import { SubscribeOnComponent } from './components/utility-operators/subscribe-on/subscribe-on.component';
+import { ObserveOnComponent } from './components/utility-operators/observe-on/observe-on.component';
+import { MaterializeComponent } from './components/utility-operators/materialize/materialize.component';
+import { DeMaterializeComponent } from './components/utility-operators/de-materialize/de-materialize.component';
+import { DelayComponent } from './components/utility-operators/delay/delay.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -258,6 +266,18 @@ const routes: Routes = [
           { path: 'default', component: DefaultIfEmptyComponent },
         ],
       },
+      {
+        path: 'utility-operators',
+        component: UtilityOperatorsComponent,
+        children: [
+          { path: 'to-array', component: ToArrayComponent },
+          { path: 'subscribe-on', component: SubscribeOnComponent },
+          { path: 'observe-on', component: ObserveOnComponent },
+          { path: 'materialize', component: MaterializeComponent },
+          { path: 'de-materialize', component: DeMaterializeComponent },
+          { path: 'delay', component: DelayComponent },
+        ],
+      },
     ],
   },
   {
@@ -406,6 +426,13 @@ export const routingComponents = [
   FindComponent,
   EveryComponent,
   DefaultIfEmptyComponent,
+  UtilityOperatorsComponent,
+  ToArrayComponent,
+  SubscribeOnComponent,
+  ObserveOnComponent,
+  MaterializeComponent,
+  DeMaterializeComponent,
+  DelayComponent,
 ];
 
 @NgModule({

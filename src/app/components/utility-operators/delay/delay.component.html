@@ -1,0 +1,13 @@
+<h3>Delay Operator</h3>
+<form class="functions" #Form="ngForm">
+  <input
+    type="number"
+    name="seconds"
+    ngModel
+    placeholder="Enter seconds to delay"
+    required
+  />
+  <button [disabled]="Form.invalid" (click)="insertDelay(Form.value.seconds)">
+    Delay for {{ Form.value.seconds || 0 }} seconds
+  </button>
+</form>
