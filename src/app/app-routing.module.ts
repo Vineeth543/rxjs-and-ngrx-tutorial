@@ -122,7 +122,13 @@ import { StartWithComponent } from './components/join-operators/start-with/start
 import { WithLatestFromComponent } from './components/join-operators/with-latest-from/with-latest-from.component';
 import { GroupByComponent } from './components/transformation-operators/group-by/group-by.component';
 import { PairwiseComponent } from './components/transformation-operators/pairwise/pairwise.component';
-import { WindowComponent } from './components/transformation-operators/window/window.component';
+
+import { WindowOperatorsComponent } from './components/window-operators/window-operators.component';
+import { WindowComponent } from './components/window-operators/window/window.component';
+import { WindowCountComponent } from './components/window-operators/window-count/window-count.component';
+import { WindowTimeComponent } from './components/window-operators/window-time/window-time.component';
+import { WindowToggleComponent } from './components/window-operators/window-toggle/window-toggle.component';
+import { WindowWhenComponent } from './components/window-operators/window-when/window-when.component';
 
 const routes: Routes = [
   {
@@ -216,7 +222,6 @@ const routes: Routes = [
           { path: 'map-to', component: MapToComponent },
           { path: 'group-by', component: GroupByComponent },
           { path: 'pairwise', component: PairwiseComponent },
-          { path: 'window', component: WindowComponent },
         ],
       },
       {
@@ -304,6 +309,17 @@ const routes: Routes = [
           { path: 'merge-all', component: MergeAllComponent },
           { path: 'start-with', component: StartWithComponent },
           { path: 'with-latest-from', component: WithLatestFromComponent },
+        ],
+      },
+      {
+        path: 'window-operators',
+        component: WindowOperatorsComponent,
+        children: [
+          { path: 'window', component: WindowComponent },
+          { path: 'window-count', component: WindowCountComponent },
+          { path: 'window-time', component: WindowTimeComponent },
+          { path: 'window-toggle', component: WindowToggleComponent },
+          { path: 'window-when', component: WindowWhenComponent },
         ],
       },
     ],
@@ -471,7 +487,12 @@ export const routingComponents = [
   WithLatestFromComponent,
   GroupByComponent,
   PairwiseComponent,
+  WindowOperatorsComponent,
   WindowComponent,
+  WindowCountComponent,
+  WindowTimeComponent,
+  WindowToggleComponent,
+  WindowWhenComponent,
 ];
 
 @NgModule({

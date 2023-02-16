@@ -16,6 +16,11 @@ import {
 export class WindowComponent {
   subscription: Subscription[] = new Array<Subscription>();
 
+  startBothInterval(): void {
+    this.bufferInterval();
+    this.windowInterval();
+  }
+
   bufferInterval(): void {
     console.log('Buffer interval started 🚀');
     this.subscription.push(
