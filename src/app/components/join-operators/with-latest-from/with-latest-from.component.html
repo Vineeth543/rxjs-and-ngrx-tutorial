@@ -1,0 +1,17 @@
+<h3>With Latest From Operator</h3>
+<form class="functions" #Form="ngForm">
+  <input
+    type="number"
+    name="second"
+    ngModel
+    placeholder="Enter the secend to start inner interval"
+    required
+  />
+  <button
+    [disabled]="Form.invalid"
+    (click)="startIntervalWithLatestFrom(Form.value.second)"
+  >
+    Start inner interval from {{ Form.value.second || 0 }} seconds
+  </button>
+  <button (click)="stopInterval()">Stop Interval</button>
+</form>

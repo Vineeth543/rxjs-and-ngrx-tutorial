@@ -112,6 +112,18 @@ import { MaterializeComponent } from './components/utility-operators/materialize
 import { DeMaterializeComponent } from './components/utility-operators/de-materialize/de-materialize.component';
 import { DelayComponent } from './components/utility-operators/delay/delay.component';
 
+import { JoinOperatorsComponent } from './components/join-operators/join-operators.component';
+import { CombineLatestAllComponent } from './components/join-operators/combine-latest-all/combine-latest-all.component';
+import { ConcatAllComponent } from './components/join-operators/concat-all/concat-all.component';
+import { ExhaustAllComponent } from './components/join-operators/exhaust-all/exhaust-all.component';
+import { SwitchAllComponent } from './components/join-operators/switch-all/switch-all.component';
+import { MergeAllComponent } from './components/join-operators/merge-all/merge-all.component';
+import { StartWithComponent } from './components/join-operators/start-with/start-with.component';
+import { WithLatestFromComponent } from './components/join-operators/with-latest-from/with-latest-from.component';
+import { GroupByComponent } from './components/transformation-operators/group-by/group-by.component';
+import { PairwiseComponent } from './components/transformation-operators/pairwise/pairwise.component';
+import { WindowComponent } from './components/transformation-operators/window/window.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -202,6 +214,9 @@ const routes: Routes = [
         children: [
           { path: 'map', component: MapOperatorComponent },
           { path: 'map-to', component: MapToComponent },
+          { path: 'group-by', component: GroupByComponent },
+          { path: 'pairwise', component: PairwiseComponent },
+          { path: 'window', component: WindowComponent },
         ],
       },
       {
@@ -276,6 +291,19 @@ const routes: Routes = [
           { path: 'materialize', component: MaterializeComponent },
           { path: 'de-materialize', component: DeMaterializeComponent },
           { path: 'delay', component: DelayComponent },
+        ],
+      },
+      {
+        path: 'join-operators',
+        component: JoinOperatorsComponent,
+        children: [
+          { path: 'combine-latest-all', component: CombineLatestAllComponent },
+          { path: 'concat-all', component: ConcatAllComponent },
+          { path: 'exhaust-all', component: ExhaustAllComponent },
+          { path: 'switch-all', component: SwitchAllComponent },
+          { path: 'merge-all', component: MergeAllComponent },
+          { path: 'start-with', component: StartWithComponent },
+          { path: 'with-latest-from', component: WithLatestFromComponent },
         ],
       },
     ],
@@ -433,6 +461,17 @@ export const routingComponents = [
   MaterializeComponent,
   DeMaterializeComponent,
   DelayComponent,
+  JoinOperatorsComponent,
+  CombineLatestAllComponent,
+  ConcatAllComponent,
+  ExhaustAllComponent,
+  SwitchAllComponent,
+  MergeAllComponent,
+  StartWithComponent,
+  WithLatestFromComponent,
+  GroupByComponent,
+  PairwiseComponent,
+  WindowComponent,
 ];
 
 @NgModule({

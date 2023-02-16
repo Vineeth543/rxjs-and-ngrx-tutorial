@@ -1,0 +1,17 @@
+<h3>Start With Operator</h3>
+<form class="functions" #Form="ngForm">
+  <input
+    type="string"
+    name="data"
+    ngModel
+    placeholder="Enter data to start with"
+    required
+  />
+  <button
+    [disabled]="Form.invalid"
+    (click)="startIntervalWithData(Form.value.data)"
+  >
+    Start Interval with {{ Form.value.data }}
+  </button>
+  <button (click)="stopInterval()">Stop Interval</button>
+</form>
